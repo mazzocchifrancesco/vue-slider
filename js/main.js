@@ -23,6 +23,7 @@ const option = {
                 }
             ],
             contatore: 0,
+            autoClick:0
         }
     },
 
@@ -49,6 +50,16 @@ const option = {
 
         seleziona(indice) {
             this.contatore=indice
+        },
+        autoplay() {
+            if (this.autoClick==0) {
+                autoInterval=setInterval(this.avanti, 3000);
+                this.autoClick++
+            }
+        },
+        stop() {
+            clearInterval(autoInterval);
+            this.autoClick=0;
         }
 
     }

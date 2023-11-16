@@ -31,8 +31,13 @@
 
 
         </div>
-        <div @click="avanti()" class="btn btn-secondary me-2">AVANTI</div>
-        <div @click="indietro()" class="btn btn-secondary">INDIETRO</div>
+        <div class="d-flex gap-2">
+            <div @click="avanti()" class="btn btn-secondary">AVANTI</div>
+            <div @click="indietro()" class="btn btn-secondary">INDIETRO</div>
+            <div @click="autoplay()" class="btn btn-secondary">AUTOPLAY</div>
+            <div @click="stop()" class="btn btn-secondary">STOP</div>
+        </div>
+
 
     </div>
 
