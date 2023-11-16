@@ -45,6 +45,10 @@ const option = {
         else {
             this.contatore=this.slides.length-1;
             }
+        },
+
+        seleziona() {
+            console.log(this.slides[1].testo);
         }
 
     }

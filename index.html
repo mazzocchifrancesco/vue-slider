@@ -16,17 +16,22 @@
 
 <body class="bg-light d-flex justify-content-center align-items-center flex-column">
     <div id="app">
-        <div v-for="(card, i) in slides" class="card position-relative mt-5" :class="{ 'd-none': (i!=contatore) }">
-            <h1>{{slides[i].titolo}}</h1>
+        <div id="thumbnails" class="d-flex mt-5 justify-content-between">
+
+                <img @click="seleziona()" v-for="(img, i) in slides" :src=slides[i].immagine :class="{ 'illuminata': (i!=contatore) }">
+
+        </div>
+        <div v-for="(card, i) in slides" class="card position-relative mt-2 mb-2" :class="{ 'd-none': (i!=contatore) }">
             <div class="imgBox">
                 <img :src=slides[i].immagine alt="">
             </div>
+            <h1>{{slides[i].titolo}}</h1>
             <p>{{slides[i].testo}}</p>
             <p class="contatore">{{contatore+1}}</p>
 
 
         </div>
-        <div @click="avanti()" class="btn btn-secondary">AVANTI</div>
+        <div @click="avanti()" class="btn btn-secondary me-2">AVANTI</div>
         <div @click="indietro()" class="btn btn-secondary">INDIETRO</div>
 
     </div>
