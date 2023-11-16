@@ -47,8 +47,8 @@ const option = {
             }
         },
 
-        seleziona() {
-            console.log(this.slides[1].testo);
+        seleziona(indice) {
+            this.contatore=indice
         }
 
     }
