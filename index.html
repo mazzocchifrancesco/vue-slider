@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +11,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body>
+
+<body class="bg-light d-flex justify-content-center align-items-center flex-column">
     <div id="app">
-        <div id="container">
-            <div v-for="card in slides" class="card">
-                
+        <div v-for="(card, i) in slides" class="card position-relative mt-5" :class="{ 'd-none': (i!=contatore) }">
+            <h1>{{slides[i].titolo}}</h1>
+            <div class="imgBox">
+                <img :src=slides[i].immagine alt="">
             </div>
+            <p>{{slides[i].testo}}</p>
+            <p class="contatore">{{contatore+1}}</p>
+
+
         </div>
+        <div @click="avanti()" class="btn btn-secondary">AVANTI</div>
+        <div @click="indietro()" class="btn btn-secondary">INDIETRO</div>
+
     </div>
-    
+
     <script src="js/main.js"></script>
 </body>
+
 </html>
+
+
+
+
+
+<!-- TRACCIA C - Slide con step numerati
+Immagine, titolo e testo sono racchiusi in una card, uno sotto l’altro, e avranno un numero che parte da 1 e si incrementa man mano in un angolo della slide -->
+
+<!-- Fare elementi cliccabili per selezionare direttamente la slide che vuoi vedere come principale.
+Applicare autoplay allo slider: ogni 3 secondi cambia l’immagine automaticamente
+Se vi viene in mente altro e avete tempo fate quello che vi viene in mente, piena libertà e creatività 🙂 -->

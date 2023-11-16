@@ -22,17 +22,33 @@ const option = {
                     testo: 'Approfitta delle nostre offerte speciali. Sconti incredibili solo per te!'
                 }
             ],
+            contatore: 0,
         }
     },
 
     methods: {
+        avanti() {
+            if (this.contatore<this.slides.length-1) {
+                this.contatore++
+            }
+            else {
+                this.contatore=0;
+
+            }
+        },
+
+        indietro() {
+            if (this.contatore>0) {
+            this.contatore--
+
+        }
+        else {
+            this.contatore=this.slides.length-1;
+            }
+        }
 
     }
-
-
-
-
-};
+}
 
 
 createApp(option).mount('#app')
